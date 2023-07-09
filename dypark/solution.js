@@ -17,7 +17,6 @@ function solution(players, callings) {
     return players;
 }
 
-
 //통과
 function solution(players, callings) {
     var sPlayers = new Map();
@@ -29,10 +28,9 @@ function solution(players, callings) {
     callings.forEach((cplayer)=>{
   
         var lPlayer = players[sPlayers.get(cplayer) - 1];
-        var tmp = players[sPlayers.get(cplayer) - 1];
 
         players[sPlayers.get(cplayer) - 1] = players[sPlayers.get(cplayer)];
-        players[sPlayers.get(cplayer)] = tmp;
+        players[sPlayers.get(cplayer)] = lPlayer;
 
         sPlayers.set(cplayer, sPlayers.get(cplayer) - 1);
         sPlayers.set(lPlayer, sPlayers.get(lPlayer) + 1);
